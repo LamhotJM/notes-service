@@ -84,10 +84,17 @@ WSGI_APPLICATION = 'comment.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+      #  'ENGINE': 'django.db.backends.sqlite3',
+     #'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'comment_db',
+        'USER': 'dev_pg_user',
+        'PASSWORD': 'YmhhbG9vY2hvZA==',
+        'HOST': 'postgres-dev.cib2hqsoqwhd.ap-southeast-1.rds.amazonaws.com',
+        'PORT': 5432,
     }
 }
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
