@@ -1,6 +1,10 @@
 ## Comment Micro-services
 REST Commentary Services With Django Rest Framework Create the Python Virtual environment and clone the project and follow the below steps.
 
+## Herukusetup
+git push heroku master
+heroku run python manage.py syncdb
+
 ## Installing 
 ```
 - django-admin startproject {$project-name}
@@ -89,20 +93,8 @@ python manage.py migrate
   ]
 }
 ```
-
-## Staging
-```
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'comment_db',
-        'USER': 'dev_pg_user',
-        'PASSWORD': 'YmhhbG9vY2hvZA==',
-        'HOST': 'postgres-dev.cib2hqsoqwhd.ap-southeast-1.rds.amazonaws.com',
-        'PORT': 5432,
-    }
-}
-```
+## References
+https://realpython.com/blog/python/migrating-your-django-project-to-heroku/
 
 ## Local 
 ```
