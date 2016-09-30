@@ -2,7 +2,7 @@
 REST Commentary Services With Django Rest Framework Create the Python Virtual environment and clone the project and follow the below steps.
 
 ## Herukusetup
-git push heroku master
+git push heroku master <br>
 heroku run python manage.py syncdb
 
 ## Installing 
