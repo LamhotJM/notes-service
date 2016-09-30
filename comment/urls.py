@@ -15,14 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from commentengine.views import MasterCommentList,MasterCommentDetail
 from rest_framework import routers
 from rest_framework.authtoken import views
 
 
 router = routers.DefaultRouter()
-
-
 
 urlpatterns = [
     url(r'^api-docs/', include(router.urls)),

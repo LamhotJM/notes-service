@@ -1,6 +1,5 @@
 from django.test import TestCase
 from models import *
-import datetime
 
 
 class CommentSetup(TestCase):
@@ -59,6 +58,6 @@ class CommentTest(CommentSetup):
         t11 = 'Test 011  created date match'
         print t11
         self.assertEqual(comment.modifiedby, 'Lorem Ipsum')
-        t13 = 'Test 0013 modifiedfrom match '
+        t12 = 'Test 0012 modifiedfrom match '
         print t12
         self.assertEqual(comment.modifiedfrom, 'Lorem Ipsum')

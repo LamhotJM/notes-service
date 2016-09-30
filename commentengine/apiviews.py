@@ -1,10 +1,10 @@
-from rest_framework.parsers import MultiPartParser
 from commentengine.serializers import MasterCommentSerializer
 from commentengine.models import MasterComment
 from rest_framework.parsers import JSONParser
 from rest_framework.response import Response
-
+from rest_framework import viewsets
 from rest_framework.views import APIView
+
 from rest_framework import status
 from django.http import Http404
 
@@ -13,7 +13,7 @@ class MasterCommentList(APIView):
     """
        A view that returns the count of active users in JSON.
     """
-    parser_classes = (MultiPartParser,)
+    parser_classes = (JSONParser,)
 
     def get(self, request, format=None):
         pageNum = int(request.GET.get('pn', 1))
@@ -37,6 +37,12 @@ class MasterCommentList(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class MasterCommentView(viewsets.ModelViewSet):
+    """
+       A view that returns the count of active users in JSON.
+    """
 
 
 class MasterCommentDetail(APIView):
